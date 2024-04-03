@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./components/MyNavBar";
 import images from "../_dummyData/images.json"
 import Product from "./components/Product";
