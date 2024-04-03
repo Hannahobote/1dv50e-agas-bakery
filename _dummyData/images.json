@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Pink cake",
+    "description": "Pink birthday cake",
+    "cost": "850 kr",
+    "category": "cake",
+    "image": "/cakes/cake.png"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "description": "Goodbye party cake",
+    "cost": "500 kr",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake.png"
+  },
+  {
+    "id": 3,
+    "name": "Vanila cupcake",
+    "description": "Birthday Snack",
+    "cost": "450 kr",
+    "category": "cupcake",
+    "image": "/cakes/cupcakes.png"
+  },
+  {
+    "id": 1,
+    "name": "Pink cake",
+    "description": "Pink birthday cake",
+    "cost": "850 kr",
+    "category": "cake",
+    "image": "/cakes/cake.png"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "description": "Goodbye party cake",
+    "cost": "500 kr",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake.png"
+  },
+  {
+    "id": 3,
+    "name": "Vanila cupcake",
+    "description": "Birthday Snack",
+    "cost": "450 kr",
+    "category": "cupcake",
+    "image": "/cakes/cupcakes.png"
+  },
+  {
+    "id": 1,
+    "name": "Pink cake",
+    "description": "Pink birthday cake",
+    "cost": "850 kr",
+    "category": "cake",
+    "image": "/cakes/cake.png"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "description": "Goodbye party cake",
+    "cost": "500 kr",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake.png"
+  },
+  {
+    "id": 3,
+    "name": "Vanila cupcake",
+    "description": "Birthday Snack",
+    "cost": "450 kr",
+    "category": "cupcake",
+    "image": "/cakes/cupcakes.png"
+  },
+  {
+    "id": 1,
+    "name": "Pink cake",
+    "description": "Pink birthday cake",
+    "cost": "850 kr",
+    "category": "cake",
+    "image": "/cakes/cake.png"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "description": "Goodbye party cake",
+    "cost": "500 kr",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake.png"
+  },
+  {
+    "id": 3,
+    "name": "Vanila cupcake",
+    "description": "Birthday Snack",
+    "cost": "450 kr",
+    "category": "cupcake",
+    "image": "/cakes/cupcakes.png"
+  },
+  {
+    "id": 1,
+    "name": "Pink cake",
+    "description": "Pink birthday cake",
+    "cost": "850 kr",
+    "category": "cake",
+    "image": "/cakes/cake.png"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "description": "Goodbye party cake",
+    "cost": "500 kr",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake.png"
+  },
+  {
+    "id": 3,
+    "name": "Vanila cupcake",
+    "description": "Birthday Snack",
+    "cost": "450 kr",
+    "category": "cupcake",
+    "image": "/cakes/cupcakes.png"
+  }
+]

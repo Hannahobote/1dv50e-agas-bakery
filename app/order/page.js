@@ -1,6 +1,5 @@
 import React from 'react'
 import MyNavBar from '../components/MyNavBar'
-import OrderNavbar from '../components/OrderNavbar'
 
 export default function index() {
   return (
