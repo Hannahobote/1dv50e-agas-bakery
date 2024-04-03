@@ -14,8 +14,8 @@ export default function MyNavBar() {
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link class="mr-5 hover:text-gray-900" href={"/"}>Home</Link>
-            <Link class="mr-5 hover:text-gray-900" href={"about"}> About</Link>
             <Link class="mr-5 hover:text-gray-900" href={"order"}>Order</Link>
+            <Link class="mr-5 hover:text-gray-900" href={"about"}> About</Link>
             <Link class="mr-5 hover:text-gray-900" href={"login"}>Login</Link>
           </nav>
          

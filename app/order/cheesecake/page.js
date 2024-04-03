@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function cheesecake() {
+export default function cheesecakeOrder() {
   return (
     <div>order a cheesecake</div>
   )
