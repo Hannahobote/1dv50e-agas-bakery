@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import StyledInput from './StyledInput'
 
+
 export default function PersonalInfoOrder() {
+
+  const [minDate, setMinDate] = useState('');
+
+  useEffect(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 14);
+    setMinDate(date.toISOString().substr(0, 10));
+  }, []);
+
+
   return (
     <div className='container  mx-auto'>
 
@@ -44,7 +55,10 @@ export default function PersonalInfoOrder() {
         lableText={'Leveransadress:'}
       />
 
-      
+      <label htmlFor="dateInput">Leveransdatum:</label>
+      <br></br>
+      <input type="date" id="dateInput" min={minDate} className='border border-grey-900' />
+      <br></br>
     </div>
   )
 }
