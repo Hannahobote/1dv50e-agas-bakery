@@ -1,10 +1,10 @@
 "use client"
 import MyNavBar from '@/app/components/MyNavBar'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 
 
 export default function CupcakeOrder() {
-  const cupcakeData = [
+  const cupcakeData = useMemo(() => [
     {
       amount: 6,
       cost: 270,
@@ -25,7 +25,7 @@ export default function CupcakeOrder() {
       amount: 50,
       cost: 2250,
     },
-  ]
+  ], [])
 
   const taste = ['Vanilj', 'Chokolad', 'Red velvet', 'Ombre', 'Citron', 'Morotskaka']
 
@@ -40,7 +40,7 @@ export default function CupcakeOrder() {
       setFinalPrice(selectedCupcake.cost);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [selectedAmount, cupcakeData]);
 
   return (
     <div className='bg-white text-gray-900 body-font'>
