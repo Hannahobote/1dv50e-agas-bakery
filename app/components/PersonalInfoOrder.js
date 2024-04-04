@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import StyledInput from './StyledInput'
+import StyledHeading from './StyledHeading';
 
 
 export default function PersonalInfoOrder() {
@@ -17,9 +18,7 @@ export default function PersonalInfoOrder() {
     <div className='container  mx-auto'>
 
       <br></br>
-      <h1>Personlig info:</h1>
-      <br></br>
-
+      <StyledHeading text={'Personlig info:'} />
       <StyledInput
         type={'text'}
         htmlFor={'name'}
@@ -57,7 +56,8 @@ export default function PersonalInfoOrder() {
 
       <label htmlFor="dateInput">Leveransdatum:</label>
       <br></br>
-      <input type="date" id="dateInput" min={minDate} className='border border-grey-900' />
+      <input type="date" id="dateInput" min={minDate} className='border rounded border-gray-700' />
+      <br></br>
       <br></br>
     </div>
   )

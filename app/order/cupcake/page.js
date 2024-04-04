@@ -1,6 +1,7 @@
 "use client"
 import MyNavBar from '@/app/components/MyNavBar'
 import PersonalInfoOrder from '@/app/components/PersonalInfoOrder'
+import StyledHeading from '@/app/components/StyledHeading'
 import React, { useEffect, useState, useMemo } from 'react'
 
 
@@ -62,8 +63,8 @@ export default function CupcakeOrder() {
   return (
     <div className='bg-white text-gray-900 body-font'>
       <MyNavBar />
+      <StyledHeading text={'Beställ cupcakes'} />
       <form onSubmit={sendOrder}>
-        <br></br>
         <label htmlFor="cupcakeAmount">Välj antal cupcakes</label>
         <br></br>
         <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="cupcakeAmount" id="cupcakeAmount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
