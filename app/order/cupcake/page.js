@@ -3,7 +3,7 @@ import MyNavBar from '@/app/components/MyNavBar'
 import React, { useEffect, useState } from 'react'
 
 
-export default function cupcakeOrder() {
+export default function CupcakeOrder() {
   const cupcakeData = [
     {
       amount: 6,
@@ -39,7 +39,8 @@ export default function cupcakeOrder() {
     if (selectedCupcake) {
       setFinalPrice(selectedCupcake.cost);
     }
-  }, [selectedAmount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className='bg-white text-gray-900 body-font'>
