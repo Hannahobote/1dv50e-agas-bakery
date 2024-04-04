@@ -1,9 +1,26 @@
 "use client"
 import MyNavBar from '@/app/components/MyNavBar'
+import PersonalInfoOrder from '@/app/components/PersonalInfoOrder'
 import React, { useEffect, useState, useMemo } from 'react'
 
 
 export default function CupcakeOrder() {
+  async function sendOrder(event) {
+    event.preventDefault()
+    const data = {
+      name: event.target.name.value,
+      surname: event.target.surname.value,
+      phonenr: event.target.phonenr.value,
+      adress: event.target.adress.value,
+      leveransadress: event.target.adress.value,
+      cupcakeAmount: event.target.cupcakeAmount.value,
+      taste: event.target.taste.value,
+      frosting: event.target.frosting.value,
+      price: finalPrice
+    }
+
+    console.log(data)
+  }
   const cupcakeData = useMemo(() => [
     {
       amount: 6,
@@ -45,11 +62,11 @@ export default function CupcakeOrder() {
   return (
     <div className='bg-white text-gray-900 body-font'>
       <MyNavBar />
-      <form>
+      <form onSubmit={sendOrder}>
         <br></br>
-        <label htmlFor="kontaktman_info">Välj antal cupcakes</label>
+        <label htmlFor="cupcakeAmount">Välj antal cupcakes</label>
         <br></br>
-        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="antal_cupcakes" id="antal_cupcakes" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="cupcakeAmount" id="cupcakeAmount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
           {cupcakeData.map((cupcake) => (
             <option key={cupcake.amount} value={cupcake.amount}> {cupcake.amount} </option>
@@ -57,9 +74,9 @@ export default function CupcakeOrder() {
         </select>
 
         <br></br>
-        <label htmlFor="kontaktman_info">Välj smak</label>
+        <label htmlFor="taste">Välj smak</label>
         <br></br>
-        <select class="select" name="smak" id="smak" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <select class="select" name="taste" id="taste" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
           {taste.map((taste, index) => (
             <option key={index} value={taste}> {taste} </option>
@@ -67,14 +84,17 @@ export default function CupcakeOrder() {
         </select>
 
         <br></br>
-        <label htmlFor="kontaktman_info">Välj frosting</label>
+        <label htmlFor="frosting">Välj frosting</label>
         <br></br>
-        <select class="select" name="smak" id="smak" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <select class="select" name="frosting" id="frosting" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
           {frosting.map((frosting, index) => (
             <option key={index} value={frosting}> {frosting} </option>
           ))}
         </select>
+
+
+        <PersonalInfoOrder />
 
         <p>Totala pris: {finalPrice}kr</p>
 
