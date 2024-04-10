@@ -12,11 +12,12 @@ export default function CupcakeOrder() {
       name: event.target.name.value,
       surname: event.target.surname.value,
       phonenr: event.target.phonenr.value,
-      adress: event.target.adress.value,
+      epost: event.target.epost.value,
       leveransadress: event.target.adress.value,
       cupcakeAmount: event.target.cupcakeAmount.value,
       taste: event.target.taste.value,
       frosting: event.target.frosting.value,
+      design: event.target.file.files[0],
       price: finalPrice
     }
 
@@ -93,7 +94,10 @@ export default function CupcakeOrder() {
             <option key={index} value={frosting}> {frosting} </option>
           ))}
         </select>
-
+        
+        <label >Design idé för cupcake top:</label>
+        <br></br>
+        <input type="file" id="fileInput" name='file' />
 
         <PersonalInfoOrder />
 

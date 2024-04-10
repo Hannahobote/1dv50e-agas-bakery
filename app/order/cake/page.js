@@ -12,11 +12,12 @@ export default function CakeOrder() {
       name: event.target.name.value,
       surname: event.target.surname.value,
       phonenr: event.target.phonenr.value,
-      adress: event.target.adress.value,
+      epost: event.target.epost.value,
       leveransadress: event.target.adress.value,
       taste: event.target.taste.value,
       filling: event.target.filling.value,
-      file: event.target.file.value
+      design: event.target.file.files[0],
+      leveransdatum: event.target.leveransdatum.value
     }
 
     console.log(data)

@@ -35,8 +35,8 @@ export default function PersonalInfoOrder() {
 
       <StyledInput
         type={'text'}
-        htmlFor={'e-post'}
-        name={'e-post'}
+        htmlFor={'epost'}
+        name={'epost'}
         lableText={'E-post:'}
       />
 
@@ -54,9 +54,9 @@ export default function PersonalInfoOrder() {
         lableText={'Leveransadress:'}
       />
 
-      <label htmlFor="dateInput">Leveransdatum:</label>
+      <label>Leveransdatum:</label>
       <br></br>
-      <input type="date" id="dateInput" min={minDate} className='border rounded border-gray-700' />
+      <input type="date" id="leveransdatum" min={minDate} name='leveransdatum' className='border rounded border-gray-700' />
       <br></br>
       <br></br>
     </div>

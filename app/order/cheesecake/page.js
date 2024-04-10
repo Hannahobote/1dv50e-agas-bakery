@@ -12,10 +12,11 @@ export default function CheesecakeOrder() {
       name: event.target.name.value,
       surname: event.target.surname.value,
       phonenr: event.target.phonenr.value,
-      adress: event.target.adress.value,
+      epost: event.target.epost.value,
       leveransadress: event.target.adress.value,
       cupcakeAmount: event.target.cupcakeAmount.value,
       taste: event.target.taste.value,
+      design: event.target.file.files[0],
       price: finalPrice
     }
 
@@ -77,6 +78,9 @@ export default function CheesecakeOrder() {
             <option key={index} value={taste}> {taste} </option>
           ))}
         </select>
+        <label >Design idé för Cheesecake top:</label>
+        <br></br>
+        <input type="file" id="fileInput" name='file' />
 
 
         <PersonalInfoOrder />
