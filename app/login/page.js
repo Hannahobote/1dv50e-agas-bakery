@@ -7,7 +7,7 @@ import Cookies from 'js-cookie';
 
 
 
-export default function login() {
+export default function Login() {
   const router = useRouter();
 
   const handleSubmit = async (e) => {

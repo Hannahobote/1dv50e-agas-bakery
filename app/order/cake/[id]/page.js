@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import cakeOrders from "../../../../_dummyData/cakeOrders.json"
 
-export default function oneCakeOrder({ params }) {
+export default function OneCakeOrder({ params }) {
   const router = useRouter()
   const order = cakeOrders.find((cake) => cake._id = params.id)
   return (

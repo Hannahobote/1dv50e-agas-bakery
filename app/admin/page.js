@@ -28,8 +28,8 @@ export default function AdminPage() {
       <MyNavBar/>
       <div class="-my-8 divide-y-2 divide-gray-100">
         <h1>cake order</h1>
-        {cakeOrders.map(cakeOrder => (
-          <CakeOrderComponent cakeOrderData={cakeOrder} />
+        {cakeOrders.map((cakeOrder, index) => (
+          <CakeOrderComponent key={index} cakeOrderData={cakeOrder} />
         ))}
       </div>
 
