@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import MyNavBar from '@/app/components/MyNavBar'
-import StyledP from '@/app/components/StyledP'
 import { useRouter } from 'next/navigation'
 import cakeOrders from "../../../../_dummyData/cakeOrders.json"
 import StyledHeading from '@/app/components/StyledHeading'
@@ -36,18 +35,54 @@ export default function OneCakeOrder({ params }) {
                 defaultValue={`${order.surname}`}
                 lableText={'Efternamn: '}
               />
-              <StyledP text={`${order.name} ${order.surname}`} />
-              <StyledP text={`${order.phonenr}`} />
-              <StyledP text={`${order.epost}`} />
-              <StyledP text={`${order.leveransadress}`} />
+              <StyledInputDefaultValue
+                type={'text'}
+                name={'phonenr'}
+                htmlFor={'phonenr'}
+                defaultValue={`${order.phonenr}`}
+                lableText={'Mobil nummer: '}
+              />
+              <StyledInputDefaultValue
+                type={'text'}
+                name={'epost'}
+                htmlFor={'epost'}
+                defaultValue={`${order.epost}`}
+                lableText={'E-post: '}
+              />
+
+              <StyledInputDefaultValue
+                type={'text'}
+                name={'leveransadress'}
+                htmlFor={'leveransadress'}
+                defaultValue={`${order.leveransadress}`}
+                lableText={'Leveransadress: '}
+              />
+
               <br></br>
               <StyledHeading text={'Tårta info'} />
               <p>Beställningsnummer: {params.id}</p>
-              <StyledP text={`Smak: ${order.taste}`} />
-              <StyledP text={`Fyllning: ${order.filling}`} />
-              <StyledP text={`Önskad leveransdatum: ${order.leveransdatum}`} />
+              <StyledInputDefaultValue
+                type={'text'}
+                name={'taste'}
+                htmlFor={'taste'}
+                defaultValue={`${order.taste}`}
+                lableText={'Smak: '}
+              />
+
+              <StyledInputDefaultValue
+                type={'text'}
+                name={'filling'}
+                htmlFor={'filling'}
+                defaultValue={`${order.filling}`}
+                lableText={'Fyllning: '}
+              />
+
+              <label className='text-gray-900'>Önskad Leveransdatum:</label>
+              <br></br>
+              <input type="date" id="leveransdatum" defaultValue={order.leveransdatum} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
               <p>Önskad design av kund finns till höger.</p>
             </p>
+
             <div class="flex justify-center">
               <button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Gå tillbaka</button>
               <button class="ml-4 inline-flex text-gray-700 bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Redigera</button>
@@ -56,7 +91,7 @@ export default function OneCakeOrder({ params }) {
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image alt={'cake'} src={order.design} width={450} height={450} class="object-cover object-center rounded" />
+            <Image alt={'cake'} src={order.design} width={720} height={600} class="object-cover object-center rounded" />
           </div>
         </div>
       </section>

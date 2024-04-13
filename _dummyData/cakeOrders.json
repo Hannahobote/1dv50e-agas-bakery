@@ -6,10 +6,10 @@
     "phonenr": "073-100-100",
     "epost": "lovisa.petersson@gmail.com",
     "leveransadress": "Malmögatan 2, 333 33 Malmö",
+    "leveransdatum": "2024-05-02",
     "taste": "Chokolad",
     "filling": "Vanilj",
-    "design": "/cakes/cheesecake.png",
-    "leveransdatum": "2024-05-02"
+    "design": "/cakes/cheesecake.png"
   },
   {
     "_id": 2,

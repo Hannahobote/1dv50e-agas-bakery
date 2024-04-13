@@ -1,0 +1,54 @@
+[
+  {
+    "_id": 1,
+    "name": "Lovisa",
+    "surname": "Petersson",
+    "phonenr": "073-100-100",
+    "epost": "lovisa.petersson@gmail.com",
+    "leveransadress": "Malmögatan 2, 333 33 Malmö",
+    "leveransdatum": "2024-05-02",
+    "cupcakeAmount": 8,
+    "taste": "Chokolad",
+    "design": "/cakes/cheesecake.png",
+    "price": 350
+  },
+  {
+    "_id": 2,
+    "name": "Lovisa",
+    "surname": "Petersson",
+    "phonenr": "073-100-100",
+    "epost": "lovisa.petersson@gmail.com",
+    "leveransadress": "Malmögatan 2, 333 33 Malmö",
+    "leveransdatum": "2024-05-02",
+    "cupcakeAmount": 8,
+    "taste": "Chokolad",
+    "design": "/cakes/cheesecake.png",
+    "price": 350
+  },
+  {
+    "_id": 3,
+    "name": "Lovisa",
+    "surname": "Petersson",
+    "phonenr": "073-100-100",
+    "epost": "lovisa.petersson@gmail.com",
+    "leveransadress": "Malmögatan 2, 333 33 Malmö",
+    "leveransdatum": "2024-05-02",
+    "cupcakeAmount": 8,
+    "taste": "Chokolad",
+    "design": "/cakes/cheesecake.png",
+    "price": 350
+  },
+  {
+    "_id": 4,
+    "name": "Lovisa",
+    "surname": "Petersson",
+    "phonenr": "073-100-100",
+    "epost": "lovisa.petersson@gmail.com",
+    "leveransadress": "Malmögatan 2, 333 33 Malmö",
+    "leveransdatum": "2024-05-02",
+    "cupcakeAmount": 8,
+    "taste": "Chokolad",
+    "design": "/cakes/cheesecake.png",
+    "price": 350
+  }
+]
