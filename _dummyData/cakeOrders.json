@@ -1,7 +1,7 @@
 [
   {
     "_id": 1,
-    "name": "Lovisa",
+    "name": "Anna",
     "surname": "Petersson",
     "phonenr": "073-100-100",
     "epost": "lovisa.petersson@gmail.com",
@@ -9,11 +9,12 @@
     "leveransdatum": "2024-05-02",
     "taste": "Chokolad",
     "filling": "Vanilj",
-    "design": "/cakes/cake.png"
+    "design": "/cakes/cake.png",
+    "status": "Beställning mottaget"
   },
   {
     "_id": 2,
-    "name": "Lovisa",
+    "name": "Anna",
     "surname": "Petersson",
     "phonenr": "073-100-100",
     "epost": "lovisa.petersson@gmail.com",
@@ -21,11 +22,12 @@
     "taste": "Chokolad",
     "filling": "Vanilj",
     "design": "/cakes/cake.png",
-    "leveransdatum": "2024-05-02"
+    "leveransdatum": "2024-05-02",
+    "status": "Beställning tillverkas"
   },
   {
     "_id": 3,
-    "name": "Lovisa",
+    "name": "Anna",
     "surname": "Petersson",
     "phonenr": "073-100-100",
     "epost": "lovisa.petersson@gmail.com",
@@ -33,42 +35,8 @@
     "taste": "Chokolad",
     "filling": "Vanilj",
     "design": "/cakes/cake.png",
-    "leveransdatum": "2024-05-02"
-  }, 
-  {
-    "_id": 3,
-    "name": "Lovisa",
-    "surname": "Petersson",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "taste": "Chokolad",
-    "filling": "Vanilj",
-    "design": "/cakes/cake.png",
-    "leveransdatum": "2024-05-02"
-  }, 
-  {
-    "_id": 3,
-    "name": "Lovisa",
-    "surname": "Petersson",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "taste": "Chokolad",
-    "filling": "Vanilj",
-    "design": "/cakes/cake.png",
-    "leveransdatum": "2024-05-02"
-  }, 
-  {
-    "_id": 3,
-    "name": "Lovisa",
-    "surname": "Petersson",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "taste": "Chokolad",
-    "filling": "Vanilj",
-    "design": "/cakes/cake.png",
-    "leveransdatum": "2024-05-02"
+    "leveransdatum": "2024-05-02",
+    "status": "Beställning leveredad"
+
   }
 ]

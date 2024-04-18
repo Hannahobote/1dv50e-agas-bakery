@@ -1,13 +1,14 @@
 import React from "react"
 import Link from "next/link"
 
-export default function OrderCard({ data, category, href }) {
+export default function OrderCard({ data, category, href, status }) {
   return (
     <div>
       <div class="py-8 flex flex-wrap md:flex-nowrap">
         <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
           <span class="font-semibold title-font text-gray-700">{category}</span>
           <span class="mt-1 text-gray-500 text-sm">{data.leveransdatum}</span>
+          <span class="inline-block rounded text-indigo-500 text-xs font-medium tracking-widest">{status}</span>
         </div>
         <div class="md:flex-grow">
 

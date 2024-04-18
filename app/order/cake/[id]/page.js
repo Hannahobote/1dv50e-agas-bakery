@@ -6,6 +6,7 @@ import cakeOrders from "../../../../_dummyData/cakeOrders.json"
 import StyledHeading from '@/app/components/StyledHeading'
 import Image from 'next/image'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
+import CustomerInfo from '@/app/components/CustomerInfo'
 
 
 export default function OneCakeOrder({ params }) {
@@ -18,45 +19,7 @@ export default function OneCakeOrder({ params }) {
         <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <p class="mb-8 leading-relaxed">
-
-              <StyledHeading text={'Beställare'} />
-              <StyledInputDefaultValue
-                type={'text'}
-                name={'name'}
-                htmlFor={'name'}
-                defaultValue={`${order.name}`}
-                lableText={'Namn: '}
-              />
-
-              <StyledInputDefaultValue
-                type={'text'}
-                name={'surname'}
-                htmlFor={'surname'}
-                defaultValue={`${order.surname}`}
-                lableText={'Efternamn: '}
-              />
-              <StyledInputDefaultValue
-                type={'text'}
-                name={'phonenr'}
-                htmlFor={'phonenr'}
-                defaultValue={`${order.phonenr}`}
-                lableText={'Mobil nummer: '}
-              />
-              <StyledInputDefaultValue
-                type={'text'}
-                name={'epost'}
-                htmlFor={'epost'}
-                defaultValue={`${order.epost}`}
-                lableText={'E-post: '}
-              />
-
-              <StyledInputDefaultValue
-                type={'text'}
-                name={'leveransadress'}
-                htmlFor={'leveransadress'}
-                defaultValue={`${order.leveransadress}`}
-                lableText={'Leveransadress: '}
-              />
+              <CustomerInfo order={order} />
 
               <br></br>
               <StyledHeading text={'Tårta info'} />

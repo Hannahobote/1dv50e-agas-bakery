@@ -3,9 +3,10 @@ import React from 'react'
 import MyNavBar from '@/app/components/MyNavBar'
 import { useRouter } from 'next/navigation'
 import cheesecakeOrders from "../../../../_dummyData/cheesecakeOrders.json"
-import StyledHeading from '@/app/components/StyledHeading'
 import Image from 'next/image'
+import StyledHeading from '@/app/components/StyledHeading'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
+import CustomerInfo from '@/app/components/CustomerInfo'
 
 
 export default function OneCheesecakeOrder({ params }) {
@@ -20,45 +21,8 @@ export default function OneCheesecakeOrder({ params }) {
             <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
               <p class="mb-8 leading-relaxed">
 
-                <StyledHeading text={'Beställare'} />
-                <StyledInputDefaultValue
-                  type={'text'}
-                  name={'name'}
-                  htmlFor={'name'}
-                  defaultValue={`${order.name}`}
-                  lableText={'Namn: '}
-                />
-
-                <StyledInputDefaultValue
-                  type={'text'}
-                  name={'surname'}
-                  htmlFor={'surname'}
-                  defaultValue={`${order.surname}`}
-                  lableText={'Efternamn: '}
-                />
-                <StyledInputDefaultValue
-                  type={'text'}
-                  name={'phonenr'}
-                  htmlFor={'phonenr'}
-                  defaultValue={`${order.phonenr}`}
-                  lableText={'Mobil nummer: '}
-                />
-                <StyledInputDefaultValue
-                  type={'text'}
-                  name={'epost'}
-                  htmlFor={'epost'}
-                  defaultValue={`${order.epost}`}
-                  lableText={'E-post: '}
-                />
-
-                <StyledInputDefaultValue
-                  type={'text'}
-                  name={'leveransadress'}
-                  htmlFor={'leveransadress'}
-                  defaultValue={`${order.leveransadress}`}
-                  lableText={'Leveransadress: '}
-                />
-
+                <CustomerInfo order={order} />
+                
                 <br></br>
                 <StyledHeading text={'Cheesecake info'} />
                 <p>Beställningsnummer: {params.id}</p>
@@ -89,7 +53,16 @@ export default function OneCheesecakeOrder({ params }) {
                 <label className='text-gray-900'>Önskad Leveransdatum:</label>
                 <br></br>
                 <input type="date" id="leveransdatum" defaultValue={order.leveransdatum} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
-                <p>Önskad design av kund finns till höger.</p>
+
+                <br></br>
+                <label className='text-gray-900 mt-2'>Status:</label>
+                <select class="select" name="status" id="status" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out mt-2">
+                  {['Beställning mottagen', 'Beställning tillverkas', 'Beställning levererad'].map((status, index) => (
+                    <option key={index} value={status}> {status} </option>
+                  ))}
+                </select>
+
+                <p>Önskad design av kund finns till höger eller nedan.</p>
               </p>
 
               <div class="flex justify-center">

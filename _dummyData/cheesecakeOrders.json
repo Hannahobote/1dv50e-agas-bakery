@@ -10,7 +10,8 @@
     "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
-    "price": 350
+    "price": 350,
+    "status": "Beställning mottaget"
   },
   {
     "_id": 2,
@@ -23,7 +24,8 @@
     "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
-    "price": 350
+    "price": 350,
+    "status": "Beställning tillverkas"
   },
   {
     "_id": 3,
@@ -36,19 +38,7 @@
     "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
-    "price": 350
-  },
-  {
-    "_id": 4,
-    "name": "Lovisa",
-    "surname": "Petersson",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "leveransdatum": "2024-05-02",
-    "amount": 8,
-    "taste": "Chokolad",
-    "design": "/cakes/cheesecake.png",
-    "price": 350
+    "price": 350,
+    "status": "Beställning levererad"
   }
 ]

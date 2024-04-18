@@ -11,7 +11,8 @@
     "taste": "Chokolad",
     "frosting": "butter cream",
     "design": "/cakes/cupcakes.png",
-    "price": 270
+    "price": 270,
+    "status": "Beställning mottaget"
   },
   {
     "_id": 2,
@@ -25,7 +26,8 @@
     "taste": "Chokolad",
     "frosting": "butter cream",
     "design": "/cakes/cupcakes.png",
-    "price": 270
+    "price": 270,
+    "status": "Beställning tillverkas"
   },
   {
     "_id": 3,
@@ -39,34 +41,7 @@
     "taste": "Chokolad",
     "frosting": "butter cream",
     "design": "/cakes/cupcakes.png",
-    "price": 270
-  },
-  {
-    "_id": 4,
-    "name": "Nova",
-    "surname": "Lundberg",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "leveransdatum": "2024-05-02",
-    "amount": 6,
-    "taste": "Chokolad",
-    "frosting": "butter cream",
-    "design": "/cakes/cupcakes.png",
-    "price": 270
-  },
-  {
-    "_id": 5,
-    "name": "Nova",
-    "surname": "Lundberg",
-    "phonenr": "073-100-100",
-    "epost": "lovisa.petersson@gmail.com",
-    "leveransadress": "Malmögatan 2, 333 33 Malmö",
-    "leveransdatum": "2024-05-02",
-    "amount": 6,
-    "taste": "Chokolad",
-    "frosting": "butter cream",
-    "design": "/cakes/cupcakes.png",
-    "price": 270
+    "price": 270,
+    "status": "Beställning levererad"
   }
 ]

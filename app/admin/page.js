@@ -30,15 +30,15 @@ export default function AdminPage() {
       <MyNavBar />
       <div class="-my-8 divide-y-2 divide-gray-100">
         {cakeOrders.map((cakeOrder, index) => (
-          <OrderCard key={index} data={cakeOrder} category={'CAKE'} href={'cake'} />
+          <OrderCard key={index} data={cakeOrder} category={'CAKE'} href={'cake'} status={cakeOrder.status} />
         ))}
 
         {cheesecakeOrders.map((cakeOrder, index) => (
-          <OrderCard key={index} data={cakeOrder} category={'CHEESECAKE'} href={'cheesecake'}/>
+          <OrderCard key={index} data={cakeOrder} category={'CHEESECAKE'} href={'cheesecake'} status={cakeOrder.status}/>
         ))}
 
         {cupcakeOrders.map((cakeOrder, index) => (
-          <OrderCard key={index} data={cakeOrder} category={'CUPCAKE'} href={'cupcake'} />
+          <OrderCard key={index} data={cakeOrder} category={'CUPCAKE'} href={'cupcake'} status={cakeOrder.status}/>
         ))}
       </div>
 
