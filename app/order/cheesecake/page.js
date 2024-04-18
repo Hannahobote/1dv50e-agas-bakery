@@ -14,7 +14,7 @@ export default function CheesecakeOrder() {
       phonenr: event.target.phonenr.value,
       epost: event.target.epost.value,
       leveransadress: event.target.adress.value,
-      cupcakeAmount: event.target.cupcakeAmount.value,
+      amount: event.target.amount.value,
       taste: event.target.taste.value,
       design: event.target.file.files[0],
       price: finalPrice
@@ -61,8 +61,8 @@ export default function CheesecakeOrder() {
       <StyledHeading text={'Beställ Cheesecake'} />
       
       <form onSubmit={sendOrder}>
-        <label htmlFor="cupcakeAmount">Välj antal bitar</label>
-        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="cupcakeAmount" id="cupcakeAmount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <label htmlFor="amount">Välj antal bitar</label>
+        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="amount" id="amount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
           {cheesecakeData.map((cupcake) => (
             <option key={cupcake.amount} value={cupcake.amount}> {cupcake.amount} </option>

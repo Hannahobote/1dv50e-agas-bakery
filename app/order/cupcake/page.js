@@ -14,7 +14,7 @@ export default function CupcakeOrder() {
       phonenr: event.target.phonenr.value,
       epost: event.target.epost.value,
       leveransadress: event.target.adress.value,
-      cupcakeAmount: event.target.cupcakeAmount.value,
+      amount: event.target.amount.value,
       taste: event.target.taste.value,
       frosting: event.target.frosting.value,
       design: event.target.file.files[0],
@@ -66,9 +66,9 @@ export default function CupcakeOrder() {
       <MyNavBar />
       <StyledHeading text={'Beställ cupcakes'} />
       <form onSubmit={sendOrder}>
-        <label htmlFor="cupcakeAmount">Välj antal cupcakes</label>
+        <label htmlFor="amount">Välj antal cupcakes</label>
         <br></br>
-        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="cupcakeAmount" id="cupcakeAmount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <select onChange={(e) => setSelectedAmount(Number(e.target.value))} class="select" name="amount" id="amount" className="w-full bg-white  rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
           {cupcakeData.map((cupcake) => (
             <option key={cupcake.amount} value={cupcake.amount}> {cupcake.amount} </option>

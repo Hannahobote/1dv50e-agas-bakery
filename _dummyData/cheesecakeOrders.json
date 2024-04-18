@@ -7,7 +7,7 @@
     "epost": "lovisa.petersson@gmail.com",
     "leveransadress": "Malmögatan 2, 333 33 Malmö",
     "leveransdatum": "2024-05-02",
-    "cupcakeAmount": 8,
+    "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
     "price": 350
@@ -20,7 +20,7 @@
     "epost": "lovisa.petersson@gmail.com",
     "leveransadress": "Malmögatan 2, 333 33 Malmö",
     "leveransdatum": "2024-05-02",
-    "cupcakeAmount": 8,
+    "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
     "price": 350
@@ -33,7 +33,7 @@
     "epost": "lovisa.petersson@gmail.com",
     "leveransadress": "Malmögatan 2, 333 33 Malmö",
     "leveransdatum": "2024-05-02",
-    "cupcakeAmount": 8,
+    "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
     "price": 350
@@ -46,7 +46,7 @@
     "epost": "lovisa.petersson@gmail.com",
     "leveransadress": "Malmögatan 2, 333 33 Malmö",
     "leveransdatum": "2024-05-02",
-    "cupcakeAmount": 8,
+    "amount": 8,
     "taste": "Chokolad",
     "design": "/cakes/cheesecake.png",
     "price": 350

@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import MyNavBar from '../components/MyNavBar';
 import cakeOrders from '../../_dummyData/cakeOrders.json'
-import CakeOrderComponent from '../components/CakeOrderCard';
 import cheesecakeOrders from "../../_dummyData/cheesecakeOrders.json"
-import CheesecakeOrderCard from '../components/CheesecakeOrderCard';
+import cupcakeOrders from "../../_dummyData/cupcakeOrders.json"
+import OrderCard from '../components/OrderCard';
+
 
 
 export default function AdminPage() {
@@ -28,13 +29,16 @@ export default function AdminPage() {
     <div class="container px-5 py-24 mx-auto bg-white">
       <MyNavBar />
       <div class="-my-8 divide-y-2 divide-gray-100">
-
         {cakeOrders.map((cakeOrder, index) => (
-          <CakeOrderComponent key={index} cakeOrderData={cakeOrder} />
+          <OrderCard key={index} data={cakeOrder} category={'CAKE'} href={'cake'} />
         ))}
 
         {cheesecakeOrders.map((cakeOrder, index) => (
-          <CheesecakeOrderCard key={index} cheesecakeOrderData={cakeOrder} />
+          <OrderCard key={index} data={cakeOrder} category={'CHEESECAKE'} href={'cheesecake'}/>
+        ))}
+
+        {cupcakeOrders.map((cakeOrder, index) => (
+          <OrderCard key={index} data={cakeOrder} category={'CUPCAKE'} href={'cupcake'} />
         ))}
       </div>
 

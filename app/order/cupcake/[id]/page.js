@@ -2,15 +2,15 @@
 import React from 'react'
 import MyNavBar from '@/app/components/MyNavBar'
 import { useRouter } from 'next/navigation'
-import cheesecakeOrders from "../../../../_dummyData/cheesecakeOrders.json"
+import cupcakeOrder from "../../../../_dummyData/cupcakeOrders.json"
 import StyledHeading from '@/app/components/StyledHeading'
 import Image from 'next/image'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
 
 
-export default function OneCheesecakeOrder({ params }) {
+export default function OneCupcakeOrder({ params }) {
   const router = useRouter()
-  const order = cheesecakeOrders.find((cake) => cake._id = params.id)
+  const order = cupcakeOrder.find((cake) => cake._id = params.id)
   return (
     <div>
       <div className='bg-white text-gray-700'>
@@ -60,7 +60,7 @@ export default function OneCheesecakeOrder({ params }) {
                 />
 
                 <br></br>
-                <StyledHeading text={'Cheesecake info'} />
+                <StyledHeading text={'Cupcake info'} />
                 <p>Beställningsnummer: {params.id}</p>
                 <StyledInputDefaultValue
                   type={'text'}
@@ -76,6 +76,15 @@ export default function OneCheesecakeOrder({ params }) {
                   htmlFor={'amount'}
                   defaultValue={`${order.amount}`}
                   lableText={'Antal cupcakes: '}
+                />
+
+
+                <StyledInputDefaultValue
+                  type={'text'}
+                  name={'frosting'}
+                  htmlFor={'frosting'}
+                  defaultValue={`${order.frosting}`}
+                  lableText={'Frosting: '}
                 />
 
                 <StyledInputDefaultValue
