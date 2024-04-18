@@ -7,6 +7,7 @@ import StyledHeading from '@/app/components/StyledHeading'
 import Image from 'next/image'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
 import CustomerInfo from '@/app/components/CustomerInfo'
+import OrderStatus from '@/app/components/OrderStatus'
 
 export default function OneCupcakeOrder({ params }) {
   const router = useRouter()
@@ -60,6 +61,10 @@ export default function OneCupcakeOrder({ params }) {
                 <label className='text-gray-900'>Önskad Leveransdatum:</label>
                 <br></br>
                 <input type="date" id="leveransdatum" defaultValue={order.leveransdatum} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
+
+                <br></br>
+                <OrderStatus />
+
                 <p>Önskad design av kund finns till höger.</p>
               </p>
 
