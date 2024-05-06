@@ -1,33 +1,39 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import MyNavBar from '../components/MyNavBar'
 import StyledInput from '../components/StyledInput'
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
-
+import TokenContext from '../components/context/TokenContext';
 
 
 export default function Login() {
   const router = useRouter();
+  const token = useContext(TokenContext)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  async function handleSubmit(event) {
+    event.preventDefault()
 
-    const isValidUser = e.target.username.value === process.env.NEXT_PUBLIC_USERNAME && e.target.password.value === process.env.NEXT_PUBLIC_PASSWORD;
-
-    //console.log(e.target.username.value, process.env.NEXT_PUBLIC_USERNAME, e.target.password.value, process.env.NEXT_PUBLIC_PASSWORD)
-
-    if (isValidUser) {
-      // Set a cookie that expires in a few minutes
-      Cookies.set('user', 'admin', { expires: 1 / 480 }); // Expires in 3 minutes
-      //Cookies.set('user', 'admin', {expires: 10 / (24*60*60)}); // Expires after 10 seconds 
-
-      // Redirect to the admin page
-      router.push('../admin');
-    } else {
-      alert('Invalid username or password');
+    const data = {
+      username: event.target.username.value,
+      password: event.target.password.value,
     }
-  };
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+
+    if (!res.ok) {
+      router.push(`../error/error${res.status}`)
+    } else {
+      token.setToken(await res.json())
+      router.push('/admin')
+      alert('Du kommer att bli automatiskt utloggad efter 10 minuter.')
+    }
+  }
+
 
   return (
     <div className='bg-white'>
