@@ -3,6 +3,7 @@ import StyledHeading from './StyledHeading'
 import StyledInputDefaultValue from './StyledInputDefaultValue'
 
 export default function CustomerInfo({order}) {
+
   return (
     <div>
       <StyledHeading text={'Beställare'} />
@@ -10,7 +11,7 @@ export default function CustomerInfo({order}) {
         type={'text'}
         name={'name'}
         htmlFor={'name'}
-        defaultValue={`${order.name}`}
+        defaultValue={order.name}
         lableText={'Namn: '}
       />
 
@@ -18,21 +19,21 @@ export default function CustomerInfo({order}) {
         type={'text'}
         name={'surname'}
         htmlFor={'surname'}
-        defaultValue={`${order.surname}`}
+        defaultValue={order.surname}
         lableText={'Efternamn: '}
       />
       <StyledInputDefaultValue
         type={'text'}
         name={'phonenr'}
         htmlFor={'phonenr'}
-        defaultValue={`${order.phonenr}`}
+        defaultValue={order.phonenr}
         lableText={'Mobil nummer: '}
       />
       <StyledInputDefaultValue
         type={'text'}
         name={'epost'}
         htmlFor={'epost'}
-        defaultValue={`${order.epost}`}
+        defaultValue={order.epost}
         lableText={'E-post: '}
       />
 
@@ -40,7 +41,7 @@ export default function CustomerInfo({order}) {
         type={'text'}
         name={'leveransadress'}
         htmlFor={'leveransadress'}
-        defaultValue={`${order.leveransadress}`}
+        defaultValue={order.delivery_adress}
         lableText={'Leveransadress: '}
       />
 

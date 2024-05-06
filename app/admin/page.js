@@ -32,7 +32,7 @@ export default function AdminPage() {
         headers: { 'Authorization': `Bearer ${token.token.accessToken}` }
       })
       if (!res.ok) {
-        router.push(`../error/error${res.status}`)
+        router.push(`../error/${res.status}`)
       } else {
         setCakeOrders(await res.json())
       }

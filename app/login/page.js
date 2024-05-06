@@ -26,7 +26,7 @@ export default function Login() {
     })
 
     if (!res.ok) {
-      router.push(`../error/error${res.status}`)
+      router.push(`../error/${res.status}`)
     } else {
       token.setToken(await res.json())
       router.push('/admin')
