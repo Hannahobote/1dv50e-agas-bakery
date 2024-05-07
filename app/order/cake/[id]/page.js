@@ -4,7 +4,7 @@ import MyNavBar from '@/app/components/MyNavBar'
 import { useRouter } from 'next/navigation'
 //import cakeOrders from "../../../../_dummyData/cakeOrders.json"
 import StyledHeading from '@/app/components/StyledHeading'
-import Image from 'next/image'
+//import Image from 'next/image'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
 import CustomerInfo from '@/app/components/CustomerInfo'
 import OrderStatus from '@/app/components/OrderStatus'
@@ -12,7 +12,6 @@ import TokenContext from '@/app/components/context/TokenContext'
 
 
 export default function OneCakeOrder({ params }) {
-  //const order = cakeOrders.find((cake) => cake._id = params.id)
   const [order, setCakeOrder] = useState([])
   const token = useContext(TokenContext)
   const router = useRouter()
@@ -28,25 +27,56 @@ export default function OneCakeOrder({ params }) {
         setCakeOrder(await res.json())
       }
     }
+
     fetchApi()
   }, [token.token.accessToken, router, params.id])
 
-  async function editOrder() {
+  async function editOrder(event) {
+    event.preventDefault()
+    const data = {
+      name: event.target.name.value,
+      surname: event.target.surname.value,
+      phonenr: event.target.phonenr.value,
+      epost: event.target.epost.value,
+      delivery_adress: event.target.delivery_adress.value,
+      delivery_date: event.target.delivery_adress.value,
+      taste: event.target.taste.value,
+      filling: event.target.filling.value,
+      //design: event.target.file.files[0],
+    }
+
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cake/${params._id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token.token.accessToken}` },
+      body: JSON.stringify(data)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('updated::', data)
+        router.back()
+      })
+
 
   }
 
   async function deleteOrder(event) {
-    event.preventDefault()
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/oder/cake/${params._id}`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token.token.accessToken}` },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('deleted')
-        router.back()
-      })
-
+    event.preventDefault();
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cake/${params.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token.token.accessToken}`
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete order');
+      }
+      console.log('Order deleted');
+      router.back();
+    } catch (error) {
+      console.error('Error deleting order:', error);
+    }
   }
 
   return (
@@ -96,7 +126,7 @@ export default function OneCakeOrder({ params }) {
             <div class="flex justify-center">
               <button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Gå tillbaka</button>
 
-              <form onSubmit={edit}>
+              <form onSubmit={editOrder}>
               <button class="ml-4 inline-flex text-gray-700 bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Redigera</button>
               </form>
 
@@ -107,7 +137,7 @@ export default function OneCakeOrder({ params }) {
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image alt={'cake'} src={`/${order.design}`} width={720} height={600} class="object-cover object-center rounded" />
+            <img alt={'cake'} src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/image/${order.design}`} width={720} height={600} class="object-cover object-center rounded" />
           </div>
         </div>
       </section>

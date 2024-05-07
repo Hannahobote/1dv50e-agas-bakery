@@ -49,14 +49,14 @@ export default function PersonalInfoOrder() {
 
       <StyledInput
         type={'text'}
-        htmlFor={'adress'}
-        name={'adress'}
+        htmlFor={'delivery_adress'}
+        name={'delivery_adress'}
         lableText={'Leveransadress:'}
       />
 
       <label>Leveransdatum:</label>
       <br></br>
-      <input type="date" id="leveransdatum" min={minDate} name='leveransdatum' className='border rounded border-gray-700' />
+      <input type="date" id="leveransdatum" min={minDate} name='delivery_date' className='border rounded border-gray-700' />
       <br></br>
       <br></br>
     </div>

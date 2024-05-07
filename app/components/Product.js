@@ -7,7 +7,7 @@ export default function Product({ alt, src, cost, category, description }) {
     <div>
       <div className=" p-4 w-full">
         <a className="block relative h-48 w-48 rounded overflow-hidden">
-          <Image alt={alt} className="object-cover object-center w-full h-full block" src={src} width={500} height={500} />
+          <img alt={alt} className="object-cover object-center w-full h-full block" src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/image/${src}`} width={500} height={500} />
 
         </a>
         <div className="mt-4">
