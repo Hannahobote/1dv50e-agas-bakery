@@ -22,7 +22,6 @@ export default function AdminPage() {
   const [cheesecakeOrders, setCheesecakeOrders] = useState([])
 
   useEffect(() => {
-    console.log(token.token.user)
     if(token.token.user == undefined) {
       router.push('../login')
     }

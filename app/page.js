@@ -1,6 +1,6 @@
 "use client"
 import Navbar from "./components/MyNavBar";
-//import images from "../_dummyData/images.json"
+import images from "../_dummyData/images.json"
 import Product from "./components/Product";
 import { useContext, useEffect, useState } from "react";
 import TokenContext from "./components/context/TokenContext";
@@ -10,11 +10,11 @@ import { useRouter } from 'next/navigation'
 
 
 export default function Home() {
-  const token = useContext(TokenContext)
-  const [images, setImages ] = useState([])
-  const router = useRouter()
+  //const token = useContext(TokenContext)
+  //const [images, setImages ] = useState([])
+  // const router = useRouter()
 
-  useEffect(() => {
+  /*useEffect(() => {
     async function fetchApi() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/image`, {
         headers: { 'Authorization': `Bearer ${token.token.accessToken}` }
@@ -27,7 +27,7 @@ export default function Home() {
     }
 
     fetchApi()
-  }, [token.token.accessToken, router])
+  }, [token.token.accessToken, router])*/
 
 
   return (
@@ -37,8 +37,8 @@ export default function Home() {
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
 
-            {images.map((image) => (
-              <div key={image.id}>
+            {images.map((image, index) => (
+              <div key={index}>
                 <Product
                   alt={image.name}
                   src={image.image}

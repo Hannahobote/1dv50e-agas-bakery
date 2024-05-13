@@ -1,17 +1,91 @@
 "use client"
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MyNavBar from '@/app/components/MyNavBar'
 import { useRouter } from 'next/navigation'
-import cupcakeOrder from "../../../../_dummyData/cupcakeOrders.json"
 import StyledHeading from '@/app/components/StyledHeading'
-import Image from 'next/image'
 import StyledInputDefaultValue from '@/app/components/StyledInputDefaultValue'
 import CustomerInfo from '@/app/components/CustomerInfo'
 import OrderStatus from '@/app/components/OrderStatus'
+import TokenContext from '@/app/components/context/TokenContext'
+
 
 export default function OneCupcakeOrder({ params }) {
+  const [order, setCakeOrder] = useState([])
+  const token = useContext(TokenContext)
   const router = useRouter()
-  const order = cupcakeOrder.find((cake) => cake._id = params.id)
+
+  useEffect(() => {
+    async function fetchApi() {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cupcake/${params.id}`, {
+        headers: { 'Authorization': `Bearer ${token.token.accessToken}` }
+      })
+      if (!res.ok) {
+        router.push(`../../../error/${res.status}`)
+      } else {
+        setCakeOrder(await res.json())
+      }
+    }
+
+    fetchApi()
+  }, [token.token.accessToken, router, params.id])
+
+  async function editOrder(event) {
+    event.preventDefault()
+    console.log('press')
+    const data = {
+      name: event.target.name.value,
+      surname: event.target.surname.value,
+      phonenr: event.target.phonenr.value,
+      epost: event.target.epost.value,
+      delivery_adress: event.target.delivery_adress.value,
+      delivery_date: event.target.delivery_adress.value,
+      taste: event.target.taste.value,
+      frosting: event.target.filling.value,
+      //design: event.target.file.files[0],
+      price: event.target.price.value,
+      status: event.target.status.value,
+      category: event.target.category.value,
+    }
+
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cupcake/${params._id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token.token.accessToken}` },
+      body: JSON.stringify(data)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('updated::', data)
+        router.back()
+      })
+
+  }
+
+  async function deleteOrder(event) {
+    event.preventDefault();
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cupcake/${params.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token.token.accessToken}`
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete order');
+      }
+      console.log('Order deleted');
+      router.back();
+    } catch (error) {
+      console.error('Error deleting order:', error);
+    }
+  }
+
+
+  async function goBack(event) {
+    event.preventDefault()
+    router.back()
+  }
+
   return (
     <div>
       <div className='bg-white text-gray-700'>
@@ -23,13 +97,20 @@ export default function OneCupcakeOrder({ params }) {
                 <CustomerInfo order={order} />
 
                 <br></br>
+                <StyledInputDefaultValue
+                  type={'text'}
+                  name={'name'}
+                  htmlFor={'name'}
+                  defaultValue={order.name}
+                  lableText={'Namn: '}
+                />
                 <StyledHeading text={'Cupcake info'} />
                 <p>Beställningsnummer: {params.id}</p>
                 <StyledInputDefaultValue
                   type={'text'}
                   name={'taste'}
                   htmlFor={'taste'}
-                  defaultValue={`${order.taste}`}
+                  defaultValue={order.taste}
                   lableText={'Smak: '}
                 />
 
@@ -37,7 +118,7 @@ export default function OneCupcakeOrder({ params }) {
                   type={'text'}
                   name={'amount'}
                   htmlFor={'amount'}
-                  defaultValue={`${order.amount}`}
+                  defaultValue={order.amount}
                   lableText={'Antal cupcakes: '}
                 />
 
@@ -46,7 +127,7 @@ export default function OneCupcakeOrder({ params }) {
                   type={'text'}
                   name={'frosting'}
                   htmlFor={'frosting'}
-                  defaultValue={`${order.frosting}`}
+                  defaultValue={order.frosting}
                   lableText={'Frosting: '}
                 />
 
@@ -54,13 +135,13 @@ export default function OneCupcakeOrder({ params }) {
                   type={'text'}
                   name={'price'}
                   htmlFor={'price'}
-                  defaultValue={`${order.price}`}
+                  defaultValue={order.price}
                   lableText={'Pris: '}
                 />
 
                 <label className='text-gray-900'>Önskad Leveransdatum:</label>
                 <br></br>
-                <input type="date" id="leveransdatum" defaultValue={order.leveransdatum} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
+                <input type="date" id="leveransdatum" defaultValue={order.delivery_date} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
 
                 <br></br>
                 <OrderStatus />
@@ -69,14 +150,23 @@ export default function OneCupcakeOrder({ params }) {
               </p>
 
               <div class="flex justify-center">
-                <button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Gå tillbaka</button>
-                <button class="ml-4 inline-flex text-gray-700 bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Redigera</button>
-                <button class="ml-4 inline-flex text-gray-700 bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-200 rounded text-lg">Radera</button>
+
+                <form onSubmit={goBack}>
+                  <button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Gå tillbaka</button>
+                </form>
+                {/*
+                <form onSubmit={editOrder}>
+                  <button class="ml-4 inline-flex text-gray-700 bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Redigera</button>
+                </form>
+                 */}
+                <form onSubmit={deleteOrder}>
+                  <button class="ml-4 inline-flex text-gray-700 bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-200 rounded text-lg">Radera</button>
+                </form>
 
               </div>
             </div>
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-              <Image alt={'cake'} src={order.design} width={720} height={600} class="object-cover object-center rounded" />
+              <img alt={'cake'} src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/image/${order.design}`} width={720} height={600} class="object-cover object-center rounded" />
             </div>
           </div>
         </section>

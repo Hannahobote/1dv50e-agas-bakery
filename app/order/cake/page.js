@@ -35,13 +35,10 @@ export default function CakeOrder() {
       console.error('Error:', res.status, res.statusText);
       // Log the response body if it's not valid JSON
       const responseBody = await res.text();
-      console.error('Response body:', responseBody);
-      // You can then handle the error message or response content accordingly
     } else {
       const responseData = await res.json();
       console.log('Order added:', responseData);
       router.push(`/order/cake/${responseData._id}`)
-      // Handle successful response
     }
   }
 

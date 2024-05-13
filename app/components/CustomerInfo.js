@@ -2,8 +2,7 @@ import React from 'react'
 import StyledHeading from './StyledHeading'
 import StyledInputDefaultValue from './StyledInputDefaultValue'
 
-export default function CustomerInfo({order}) {
-
+export default function CustomerInfo({order, onChange}) {
   return (
     <div>
       <StyledHeading text={'Beställare'} />
@@ -13,6 +12,7 @@ export default function CustomerInfo({order}) {
         htmlFor={'name'}
         defaultValue={order.name}
         lableText={'Namn: '}
+        onChange={onChange}
       />
 
       <StyledInputDefaultValue
@@ -21,6 +21,8 @@ export default function CustomerInfo({order}) {
         htmlFor={'surname'}
         defaultValue={order.surname}
         lableText={'Efternamn: '}
+        onChange={onChange}
+
       />
       <StyledInputDefaultValue
         type={'text'}
@@ -28,6 +30,8 @@ export default function CustomerInfo({order}) {
         htmlFor={'phonenr'}
         defaultValue={order.phonenr}
         lableText={'Mobil nummer: '}
+        onChange={onChange}
+
       />
       <StyledInputDefaultValue
         type={'text'}
@@ -35,6 +39,8 @@ export default function CustomerInfo({order}) {
         htmlFor={'epost'}
         defaultValue={order.epost}
         lableText={'E-post: '}
+        onChange={onChange}
+
       />
 
       <StyledInputDefaultValue
@@ -43,6 +49,8 @@ export default function CustomerInfo({order}) {
         htmlFor={'leveransadress'}
         defaultValue={order.delivery_adress}
         lableText={'Leveransadress: '}
+        onChange={onChange}
+
       />
 
     </div>
