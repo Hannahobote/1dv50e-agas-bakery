@@ -2,25 +2,45 @@
 import MyNavBar from '@/app/components/MyNavBar'
 import PersonalInfoOrder from '@/app/components/PersonalInfoOrder'
 import StyledHeading from '@/app/components/StyledHeading'
+import { useRouter } from 'next/navigation'
 import React, { useEffect, useState, useMemo } from 'react'
 
 
+
 export default function CheesecakeOrder() {
+  const router = useRouter()
+
   async function sendOrder(event) {
     event.preventDefault()
-    const data = {
-      name: event.target.name.value,
-      surname: event.target.surname.value,
-      phonenr: event.target.phonenr.value,
-      epost: event.target.epost.value,
-      leveransadress: event.target.adress.value,
-      amount: event.target.amount.value,
-      taste: event.target.taste.value,
-      design: event.target.file.files[0],
-      price: finalPrice
-    }
+    const formData = new FormData();
+    formData.append('name', event.target.name.value);
+    formData.append('surname', event.target.surname.value);
+    formData.append('phonenr', event.target.phonenr.value);
+    formData.append('epost', event.target.epost.value);
+    formData.append('delivery_adress', event.target.delivery_adress.value);
+    formData.append('delivery_date', event.target.delivery_date.value);
+    formData.append('amount', event.target.amount.value);
+    formData.append('taste', event.target.taste.value);
+    formData.append('design', event.target.file.files[0]);
+    formData.append('price', finalPrice);
+    formData.append('status', 'Beställning mottaget');
+    formData.append('category', 'cake');
 
-    console.log(data)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/order/cheesecake`, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!res.ok) {
+      // Handle the case where the response is not successful
+      console.error('Error:', res.status, res.statusText);
+      // Log the response body if it's not valid JSON
+      const responseBody = await res.text();
+    } else {
+      const responseData = await res.json();
+      console.log('Order added:', responseData);
+      router.push(`/order/cheesecake/${responseData._id}`)
+    }
   }
   const cheesecakeData = useMemo(() => [
     {
