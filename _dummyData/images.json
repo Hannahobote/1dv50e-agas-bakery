@@ -3,120 +3,98 @@
     "id": 1,
     "name": "Pink cake",
     "description": "Pink birthday cake",
-    "cost": "850 kr",
+    "cost": "",
     "category": "cake",
     "image": "/cakes/cake.png"
-  },
-  {
-    "id": 2,
-    "name": "Cheesecake",
-    "description": "Goodbye party cake",
-    "cost": "500 kr",
-    "category": "cheesecake",
-    "image": "/cakes/cheesecake.png"
-  },
-  {
-    "id": 3,
-    "name": "Vanila cupcake",
-    "description": "Birthday Snack",
-    "cost": "450 kr",
-    "category": "cupcake",
-    "image": "/cakes/cupcakes.png"
   },
   {
     "id": 1,
-    "name": "Pink cake",
-    "description": "Pink birthday cake",
-    "cost": "850 kr",
+    "name": "Blue feather cake",
+    "description": "Blue feather cake",
+    "cost": "",
     "category": "cake",
-    "image": "/cakes/cake.png"
-  },
-  {
-    "id": 2,
-    "name": "Cheesecake",
-    "description": "Goodbye party cake",
-    "cost": "500 kr",
-    "category": "cheesecake",
-    "image": "/cakes/cheesecake.png"
-  },
-  {
-    "id": 3,
-    "name": "Vanila cupcake",
-    "description": "Birthday Snack",
-    "cost": "450 kr",
-    "category": "cupcake",
-    "image": "/cakes/cupcakes.png"
+    "image": "/cakes/cake2.png"
   },
   {
     "id": 1,
-    "name": "Pink cake",
-    "description": "Pink birthday cake",
-    "cost": "850 kr",
+    "name": "Black ribbon",
+    "description": "Black ribbon",
+    "cost": "",
     "category": "cake",
-    "image": "/cakes/cake.png"
-  },
-  {
-    "id": 2,
-    "name": "Cheesecake",
-    "description": "Goodbye party cake",
-    "cost": "500 kr",
-    "category": "cheesecake",
-    "image": "/cakes/cheesecake.png"
-  },
-  {
-    "id": 3,
-    "name": "Vanila cupcake",
-    "description": "Birthday Snack",
-    "cost": "450 kr",
-    "category": "cupcake",
-    "image": "/cakes/cupcakes.png"
+    "image": "/cakes/cake3.png"
   },
   {
     "id": 1,
-    "name": "Pink cake",
-    "description": "Pink birthday cake",
-    "cost": "850 kr",
+    "name": "Heart cake",
+    "description": "Heart cake",
+    "cost": "",
     "category": "cake",
-    "image": "/cakes/cake.png"
-  },
-  {
-    "id": 2,
-    "name": "Cheesecake",
-    "description": "Goodbye party cake",
-    "cost": "500 kr",
-    "category": "cheesecake",
-    "image": "/cakes/cheesecake.png"
-  },
-  {
-    "id": 3,
-    "name": "Vanila cupcake",
-    "description": "Birthday Snack",
-    "cost": "450 kr",
-    "category": "cupcake",
-    "image": "/cakes/cupcakes.png"
+    "image": "/cakes/cake4.png"
   },
   {
     "id": 1,
-    "name": "Pink cake",
-    "description": "Pink birthday cake",
-    "cost": "850 kr",
+    "name": "Purple flower",
+    "description": "Purple flower",
+    "cost": "",
     "category": "cake",
-    "image": "/cakes/cake.png"
+    "image": "/cakes/cake5.png"
   },
   {
-    "id": 2,
-    "name": "Cheesecake",
-    "description": "Goodbye party cake",
-    "cost": "500 kr",
+    "id": 1,
+    "name": "Green heart",
+    "description": "Green heart",
+    "cost": "",
+    "category": "cake",
+    "image": "/cakes/cake7.png"
+  },
+  {
+    "id": 1,
+    "name": "Cheesecake classic",
+    "description": "Cheesecake classic",
+    "cost": "",
     "category": "cheesecake",
     "image": "/cakes/cheesecake.png"
   },
   {
-    "id": 3,
-    "name": "Vanila cupcake",
-    "description": "Birthday Snack",
-    "cost": "450 kr",
+    "id": 1,
+    "name": "Cheesecake biscoff",
+    "description": "Cheesecake biscoff",
+    "cost": "",
+    "category": "cheesecake",
+    "image": "/cakes/cheesecake2.png"
+  },
+  {
+    "id": 1,
+    "name": "Chocolate blueberry",
+    "description": "Chocolate blueberry",
+    "cost": "",
+    "category": "cupcake",
+    "image": "/cakes/cupcake 2.png"
+  },
+  {
+    "id": 1,
+    "name": "Chocolate and vanilla",
+    "description": "Chocolate and vanilla",
+    "cost": "",
+    "category": "cupcake",
+    "image": "/cakes/cupcake3.png"
+  },
+  {
+    "id": 1,
+    "name": "Vanilla blueberry",
+    "description": "Vanilla blueberry",
+    "cost": "",
+    "category": "cupcake",
+    "image": "/cakes/cupcake4.png"
+  },
+  {
+    "id": 1,
+    "name": "Sprinkle",
+    "description": "Sprinkle",
+    "cost": "",
     "category": "cupcake",
     "image": "/cakes/cupcakes.png"
   }
+  
+  
 ]
