@@ -33,6 +33,7 @@ export default function OneCheesecakeOrder({ params }) {
     fetchApi()
   }, [token.token.accessToken, router, params.id])
 
+  console.log(order)
   async function deleteOrder(event) {
     event.preventDefault();
     try {
@@ -77,7 +78,7 @@ export default function OneCheesecakeOrder({ params }) {
                   type={'text'}
                   name={'taste'}
                   htmlFor={'taste'}
-                  defaultValue={`${order.taste}`}
+                  defaultValue={order.taste}
                   lableText={'Smak: '}
                 />
 
@@ -85,7 +86,7 @@ export default function OneCheesecakeOrder({ params }) {
                   type={'text'}
                   name={'amount'}
                   htmlFor={'amount'}
-                  defaultValue={`${order.amount}`}
+                  defaultValue={order.amount}
                   lableText={'Antal cupcakes: '}
                 />
 
@@ -93,13 +94,13 @@ export default function OneCheesecakeOrder({ params }) {
                   type={'text'}
                   name={'price'}
                   htmlFor={'price'}
-                  defaultValue={`${order.price}`}
+                  defaultValue={order.price}
                   lableText={'Pris: '}
                 />
 
                 <label className='text-gray-900'>Önskad Leveransdatum:</label>
                 <br></br>
-                <input type="date" id="leveransdatum" defaultValue={order.leveransdatum} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
+                <input type="date" id="leveransdatum" defaultValue={order.delivery_date} name='leveransdatum' className='border rounded border-gray-700 text-gray-900' />
 
                 <br></br>
                 <OrderStatus />
